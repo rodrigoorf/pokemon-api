@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "c5acc2fb-c7b2-4a50-9583-32234a853b9e",
+		"name": "Pokemon API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all pokemons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pokemons?pageSize=20&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemons"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "20"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pokemon from id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pokemons/42",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemons",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update pokemon",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 801,\r\n    \"name\": \"Bulbasaur\",\r\n    \"number\": 1,\r\n    \"type1\": \"Grass\",\r\n    \"type2\": \"Poison\",\r\n    \"total\": 318.0,\r\n    \"attack\": 49.0,\r\n    \"defense\": 49.0,\r\n    \"spAtk\": 65.0,\r\n    \"spDef\": 65.0,\r\n    \"speed\": 45.0,\r\n    \"generation\": 1.0,\r\n    \"legendary\": false,\r\n    \"hp\": 45.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pokemons/801",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemons",
+						"801"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create pokemon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": 1,\r\n    \"name\": \"Bulbasaur\",\r\n    \"type1\": \"Grass\",\r\n    \"type2\": \"Poison\",\r\n    \"total\": 318.0,\r\n    \"attack\": 49.0,\r\n    \"defense\": 49.0,\r\n    \"spAtk\": 65.0,\r\n    \"spDef\": 65.0,\r\n    \"speed\": 45.0,\r\n    \"generation\": 1.0,\r\n    \"legendary\": false,\r\n    \"hp\": 45.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pokemons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pokemon",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pokemons/801",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemons",
+						"801"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
